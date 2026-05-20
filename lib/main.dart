@@ -5,6 +5,8 @@ import 'package:home_bite/login/Components/otpscreen.dart';
 import 'package:home_bite/login/Components/splashscreen.dart';
 import 'package:sizer/sizer.dart';
 
+import 'login/Home/components/homepage.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'HomeBite',
           theme: AppTheme.light(),
-          home: splashscreen(),
+          home: HomePage(),
         );
       },
     );

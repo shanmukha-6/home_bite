@@ -4,6 +4,7 @@ import 'package:home_bite/Constants/FontConstants.dart';
 import 'package:home_bite/Constants/ImageConstants.dart';
 import 'package:home_bite/Responsive.dart';
 import 'package:home_bite/components/button.dart';
+import 'package:home_bite/login/Home/components/homepage.dart';
 import 'package:sizer/sizer.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -124,7 +125,11 @@ class _OtpScreenState extends State<OtpScreen> {
           Button(
             ButtonText: "NEXT",
             ButtonColor: Colorconstants.PrimaryColor,
-            ButtononTap: () {},
+            ButtononTap: () {
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (context) => HomePage()));
+            },
           ),
         ],
       ),
