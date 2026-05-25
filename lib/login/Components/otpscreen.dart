@@ -3,6 +3,7 @@ import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
 import 'package:home_bite/Constants/ImageConstants.dart';
 import 'package:home_bite/Responsive.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:home_bite/components/button.dart';
 import 'package:home_bite/login/Home/components/homepage.dart';
 import 'package:sizer/sizer.dart';
@@ -19,8 +20,10 @@ class _OtpScreenState extends State<OtpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colorconstants.SecondaryColor,
-      body: Column(
-        children: [
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -39,68 +42,31 @@ class _OtpScreenState extends State<OtpScreen> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 4.h),
-          Padding(
-            padding: const EdgeInsets.only(left: 110),
-            child: Row(
-              children: [
-                Container(
-                  height: 4.7.h,
-                  width: 9.w,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: const Color.fromARGB(255, 119, 119, 119),
-                      width: 1.4,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-
-                SizedBox(width: 4.w),
-                Container(
-                  height: 4.7.h,
-                  width: 9.w,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: const Color.fromARGB(255, 119, 119, 119),
-                      width: 1.4,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-
-                SizedBox(width: 4.w),
-                Container(
-                  height: 4.7.h,
-                  width: 9.w,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: const Color.fromARGB(255, 119, 119, 119),
-                      width: 1.4,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                SizedBox(width: 4.w),
-                Container(
-                  height: 4.7.h,
-                  width: 9.w,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: const Color.fromARGB(255, 119, 119, 119),
-                      width: 1.4,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ],
-            ),
-          ),
           SizedBox(height: 3.h),
+          OtpTextField(
+            numberOfFields: 4,
+            borderColor: Color.fromARGB(255, 255, 255, 255),
+            //set to true to show as box or false to show as dash
+            showFieldAsBox: true,
+            //runs when a code is typed in
+            onCodeChanged: (String code) {
+              //handle validation or checks here
+            },
+            //runs when every textfield is filled
+            onSubmit: (String verificationCode) {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("Verification Code"),
+                    content: Text('Code entered is $verificationCode'),
+                  );
+                },
+              );
+            }, // end onSubmit
+          ),
+
+          SizedBox(height: 2.h),
           Row(
             children: [
               SizedBox(width: 12.h),
@@ -131,7 +97,9 @@ class _OtpScreenState extends State<OtpScreen> {
               ).push(MaterialPageRoute(builder: (context) => HomePage()));
             },
           ),
-        ],
+            ],
+          ),
+        ),
       ),
     );
   }
