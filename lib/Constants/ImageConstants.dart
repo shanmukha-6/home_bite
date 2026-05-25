@@ -9,4 +9,9 @@ class Imageconstants {
   static const String HOMETOP3 = 'assets/hometop3.png';
   static const String HOMETOP4 = 'assets/hometop4.png';
   static const String HOMEPAGE = 'assets/homepage.png';
+  static const String BRIYANI = 'assets/briyani.png';
+  static const String DOSA = 'assets/dosa.png';
+  static const String IDLY = 'assets/idly.png';
+  static const String ICECREAM = 'assets/icecream.png';
+  static const String BURGER = 'assets/burger.png';
 }

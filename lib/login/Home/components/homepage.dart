@@ -14,6 +14,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<String> filterList = [
+    "Filter",
+    "New to you",
+    "Offers",
+    "Ratings 4.0+",
+    "Pure Veg",
+    "Fast Delivery",
+  ];
+  final List<Map<String, String>> categories = [
+    {"name": "Biryani", "image": "assets/briyani.png"},
+    {"name": "Ice Creams", "image": "assets/icecream.png"},
+    {"name": "Burgers", "image": "assets/burgers.png"},
+    {"name": "Dosa", "image": "assets/dosa.png"},
+    {"name": "Idli", "image": "assets/idly.png"},
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -352,6 +367,114 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                             ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+            SizedBox(height: 2.h),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: SizedBox(
+                height: 3.4.h,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: filterList.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: const EdgeInsets.only(right: 8),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 8,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.grey.shade400),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (index == 0)
+                            const Icon(Icons.filter_alt_outlined, size: 18),
+
+                          if (index == 0) const SizedBox(width: 4),
+
+                          Text(
+                            filterList[index],
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+
+                          const SizedBox(width: 4),
+
+                          const Icon(Icons.keyboard_arrow_down, size: 18),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            SizedBox(height: 1.h),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 19),
+                  child: Text(
+                    "Explore",
+                    style: FontConstants.inter(fontSize: 19.sp),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10.h,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: categories.length,
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 22.w,
+                    margin: const EdgeInsets.only(right: 12),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 6.h,
+                          width: 6.h,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black12,
+                                blurRadius: 4,
+                                offset: Offset(0, 2),
+                              ),
+                            ],
+                          ),
+                          child: ClipOval(
+                            child: Image.asset(
+                              categories[index]["image"]!,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(height: 0.8.h),
+
+                        Text(
+                          categories[index]["name"]!,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ],

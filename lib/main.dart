@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/AppTheme.dart';
+import 'package:home_bite/login/Components/api.dart';
 import 'package:home_bite/login/Components/loginscreen.dart';
 import 'package:home_bite/login/Components/otpscreen.dart';
 import 'package:home_bite/login/Components/splashscreen.dart';
+
 import 'package:sizer/sizer.dart';
 
 import 'login/Home/components/homepage.dart';
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'HomeBite',
           theme: AppTheme.light(),
-          home: HomePage(),
+          home: splashscreen(),
         );
       },
     );
