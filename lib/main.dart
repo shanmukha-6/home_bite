@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/AppTheme.dart';
-import 'package:home_bite/login/Components/api.dart';
 import 'package:home_bite/login/Components/loginscreen.dart';
 import 'package:home_bite/login/Components/otpscreen.dart';
 import 'package:home_bite/login/Components/splashscreen.dart';

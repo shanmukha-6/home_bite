@@ -24,79 +24,79 @@ class _OtpScreenState extends State<OtpScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Image.asset(
-                Imageconstants.SIDEPIC,
-                fit: BoxFit.contain,
-                scale: 4,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Image.asset(
+                    Imageconstants.SIDEPIC,
+                    fit: BoxFit.contain,
+                    scale: 4,
+                  ),
+                ],
               ),
-            ],
-          ),
-          SizedBox(height: 7.h),
-          Text(
-            "Login With OTP",
-            style: FontConstants.inter(
-              fontSize: 24.sp,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 3.h),
-          OtpTextField(
-            numberOfFields: 4,
-            borderColor: Color.fromARGB(255, 255, 255, 255),
-            //set to true to show as box or false to show as dash
-            showFieldAsBox: true,
-            //runs when a code is typed in
-            onCodeChanged: (String code) {
-              //handle validation or checks here
-            },
-            //runs when every textfield is filled
-            onSubmit: (String verificationCode) {
-              showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: Text("Verification Code"),
-                    content: Text('Code entered is $verificationCode'),
-                  );
-                },
-              );
-            }, // end onSubmit
-          ),
-
-          SizedBox(height: 2.h),
-          Row(
-            children: [
-              SizedBox(width: 12.h),
+              SizedBox(height: 7.h),
               Text(
-                "Resend OTP in ",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16.sp,
-                  decoration: TextDecoration.underline,
+                "Login With OTP",
+                style: FontConstants.inter(
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text(
-                  "60 Seconds",
-                  style: TextStyle(color: Colors.grey, fontSize: 16.sp),
-                ),
+              SizedBox(height: 3.h),
+              OtpTextField(
+                numberOfFields: 4,
+                borderColor: Color.fromARGB(255, 255, 255, 255),
+                //set to true to show as box or false to show as dash
+                showFieldAsBox: true,
+                //runs when a code is typed in
+                onCodeChanged: (String code) {
+                  //handle validation or checks here
+                },
+                //runs when every textfield is filled
+                onSubmit: (String verificationCode) {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text("Verification Code"),
+                        content: Text('Code entered is $verificationCode'),
+                      );
+                    },
+                  );
+                }, // end onSubmit
               ),
-            ],
-          ),
-          SizedBox(height: 17.h),
-          Button(
-            ButtonText: "NEXT",
-            ButtonColor: Colorconstants.PrimaryColor,
-            ButtononTap: () {
-              Navigator.of(
-                context,
-              ).push(MaterialPageRoute(builder: (context) => HomePage()));
-            },
-          ),
+
+              SizedBox(height: 2.h),
+              Row(
+                children: [
+                  SizedBox(width: 12.h),
+                  Text(
+                    "Resend OTP in ",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 16.sp,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5),
+                    child: Text(
+                      "60 Seconds",
+                      style: TextStyle(color: Colors.grey, fontSize: 16.sp),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 17.h),
+              Button(
+                ButtonText: "NEXT",
+                ButtonColor: Colorconstants.PrimaryColor,
+                ButtononTap: () {
+                  Navigator.of(
+                    context,
+                  ).push(MaterialPageRoute(builder: (context) => HomePage()));
+                },
+              ),
             ],
           ),
         ),

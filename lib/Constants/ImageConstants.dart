@@ -14,4 +14,11 @@ class Imageconstants {
   static const String IDLY = 'assets/idly.png';
   static const String ICECREAM = 'assets/icecream.png';
   static const String BURGER = 'assets/burger.png';
+  static const String HOMEARE = 'assets/homeare.png';
+  static const String SALADS = 'assets/salad.png';
+  static const String PIZZA = 'assets/pizza.png';
+  static const String PASTA = 'assets/pasta.png';
+  static const String NOODELS = 'assets/noodels.png';
+  static const String DESSERTS = 'assets/desserts.png';
+  static const String JUICE = 'assets/juice.png';
 }
