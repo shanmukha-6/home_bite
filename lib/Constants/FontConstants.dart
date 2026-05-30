@@ -21,4 +21,36 @@ class FontConstants {
       letterSpacing: letterSpacing,
     );
   }
+
+  static TextStyle kavoon({
+    double? fontSize,
+    FontWeight? fontWeight,
+    Color? color,
+    double? height,
+    double? letterSpacing,
+  }) {
+    return GoogleFonts.kavoon(
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
+      height: height,
+      letterSpacing: letterSpacing,
+    );
+  }
+
+  static TextStyle KaushanScript({
+    double? fontSize,
+    FontWeight? fontWeight,
+    Color? color,
+    double? height,
+    double? letterSpacing,
+  }) {
+    return GoogleFonts.kaushanScript(
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
+      height: height,
+      letterSpacing: letterSpacing,
+    );
+  }
 }
