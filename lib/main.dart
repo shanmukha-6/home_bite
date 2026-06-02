@@ -3,6 +3,7 @@ import 'package:home_bite/Constants/AppTheme.dart';
 import 'package:home_bite/login/Components/loginscreen.dart';
 import 'package:home_bite/login/Components/otpscreen.dart';
 import 'package:home_bite/login/Components/splashscreen.dart';
+import 'package:home_bite/login/Home/components/customization.dart';
 
 import 'package:sizer/sizer.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'HomeBite',
           theme: AppTheme.light(),
-          home: splashscreen(),
+          home: CustomizationScreen(),
         );
       },
     );

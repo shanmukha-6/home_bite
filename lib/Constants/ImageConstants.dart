@@ -21,4 +21,6 @@ class Imageconstants {
   static const String NOODELS = 'assets/noodels.png';
   static const String DESSERTS = 'assets/desserts.png';
   static const String JUICE = 'assets/juice.png';
+  static const String MAIN = 'assets/main.png';
+  static const String CUSTOM = 'assets/custom.png';
 }

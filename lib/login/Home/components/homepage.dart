@@ -303,7 +303,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: Column(
                     children: [
-                      SizedBox(height: 2.h),
+                      SizedBox(height: 1.h),
                       SizedBox(
                         width: 90.w,
                         child: TextField(
@@ -341,61 +341,52 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Positioned(
-                  top: 120,
-                  left: 220,
-                  child: Image.asset("assets/homepage.png", scale: 4),
+                  top: 95,
+                  left: 20,
+                  child: Image.asset("assets/main.png", scale: 4),
                 ),
                 Positioned(
-                  top: 130,
-                  left: 360,
+                  top: 320,
+                  left: 140,
                   child: Container(
-                    height: 3.h,
-                    width: 15.w,
+                    height: 2.5.h,
+                    width: 21.w,
                     decoration: BoxDecoration(
                       color: Colorconstants.PrimaryColor,
-                      borderRadius: BorderRadius.circular(4),
+                      borderRadius: BorderRadius.circular(6),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 4.5, left: 2),
+                      padding: const EdgeInsets.only(top: 2, left: 2),
                       child: Text(
-                        "20% off",
-                        style: TextStyle(color: Colors.white, fontSize: 17),
+                        "Just At ₹200",
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 233, 219, 63),
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ),
                 ),
                 Positioned(
-                  top: 100,
-                  left: 10,
+                  top: 70,
+                  left: 50,
 
                   child: Text(
-                    "Great Burgers \n in Bulk",
+                    "Burger,Pizza And More",
                     style: FontConstants.kavoon(
                       color: Colors.white,
-                      fontSize: 23.sp,
+                      fontSize: 19.sp,
                     ),
                   ),
                 ),
                 Positioned(
-                  top: 200,
-                  left: 50,
+                  top: 350,
+                  left: 130,
                   child: Text(
-                    "Burgers At Home",
+                    "Order Yor Favourite Meal",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 240,
-                  left: 5,
-                  child: Text(
-                    " Examistic taste",
-                    style: FontConstants.KaushanScript(
-                      color: Colors.white,
-                      fontSize: 22.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -463,10 +454,11 @@ class _HomePageState extends State<HomePage> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    categoryItem("Birthdays"),
-                    categoryItem("Office"),
-                    categoryItem("Festival"),
-                    categoryItem("Family Functions"),
+                    categoryItem("Filters", isFilter: true),
+                    categoryItem("New to You"),
+                    categoryItem("Offers"),
+                    categoryItem("Rating 4.0"),
+                    categoryItem("Overview"),
                   ],
                 ),
               ),
@@ -524,13 +516,13 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 1.5.h),
             SizedBox(
-              height: 145,
+              height: 155,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 4,
                 itemBuilder: (context, index) {
                   return Container(
-                    width: 45.w,
+                    width: 60.w,
                     margin: const EdgeInsets.only(left: 12, right: 5),
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
@@ -553,7 +545,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             /// IMAGE
                             CircleAvatar(
-                              radius: 22,
+                              radius: 26,
                               backgroundImage: AssetImage(
                                 "assets/homechef.png",
                               ),
@@ -567,11 +559,11 @@ class _HomePageState extends State<HomePage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 5),
-                                    child: const Text(
+                                    padding: const EdgeInsets.only(left: 15),
+                                    child: Text(
                                       "Chef Laxmi",
-                                      style: TextStyle(
-                                        fontSize: 17,
+                                      style: FontConstants.inter(
+                                        fontSize: 17.sp,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -582,7 +574,7 @@ class _HomePageState extends State<HomePage> {
                                   Row(
                                     children: const [
                                       Padding(
-                                        padding: EdgeInsets.only(left: 5),
+                                        padding: EdgeInsets.only(left: 15),
                                         child: Text(
                                           "Ratings",
                                           style: TextStyle(
@@ -610,17 +602,43 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ],
                                   ),
+                                  Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                              top: 3,
+                                              left: 15,
+                                            ),
+                                            child: Text("Specialities:"),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                              top: 2,
+                                            ),
+                                            child: Text(
+                                              "Biryani",
+                                              style: FontConstants.inter(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),
                           ],
                         ),
 
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 7),
 
                         /// HYGIENE
                         Padding(
-                          padding: const EdgeInsets.only(left: 5),
+                          padding: const EdgeInsets.only(left: 70),
                           child: RichText(
                             text: const TextSpan(
                               children: [
@@ -648,25 +666,61 @@ class _HomePageState extends State<HomePage> {
                         const Spacer(),
 
                         /// BUTTON
-                        SizedBox(
-                          width: double.infinity,
-                          height: 35,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFF064B18),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 117,
+                              height: 32,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color.fromARGB(
+                                    255,
+                                    255,
+                                    255,
+                                    255,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  side: BorderSide(
+                                    color: Colorconstants.PrimaryColor,
+                                    width: 1.4,
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: const Text(
+                                  "View Menu",
+                                  style: TextStyle(
+                                    color: Colorconstants.PrimaryColor,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 15,
+                                  ),
+                                ),
                               ),
                             ),
-                            onPressed: () {},
-                            child: const Text(
-                              "View Profile",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
+                            SizedBox(width: 1.5.w),
+                            SizedBox(
+                              width: 117,
+                              height: 32,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xFF064B18),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: const Text(
+                                  "Customize",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
                       ],
                     ),
@@ -780,9 +834,9 @@ class _HomePageState extends State<HomePage> {
                                 image: DecorationImage(
                                   image: NetworkImage(
                                     index == 0
-                                        ? "https://images.unsplash.com/photo-1606491956689-2ea866880c84"
+                                        ? "https://images.unsplash.com/photo-1577219491135-ce391730fb2c"
                                         : index == 1
-                                        ? "https://images.unsplash.com/photo-1606491956689-2ea866880c84"
+                                        ? "https://images.unsplash.com/photo-1589302168068-964664d93dc0"
                                         : index == 2
                                         ? "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"
                                         : "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
@@ -844,7 +898,11 @@ class _HomePageState extends State<HomePage> {
                                   vertical: 3,
                                 ),
                                 decoration: const BoxDecoration(
-                                  color: Colors.green,
+                                  color: Color.fromARGB(255, 11, 72, 13),
+                                  border: Border(
+                                    top: BorderSide(color: Colors.white),
+                                    left: BorderSide(color: Colors.white),
+                                  ),
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(8),
                                   ),
@@ -954,17 +1012,42 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget categoryItem(String title) {
+Widget categoryItem(String title, {bool isFilter = false}) {
   return Container(
     margin: const EdgeInsets.only(right: 12),
-    padding: const EdgeInsets.symmetric(horizontal: 18),
+    padding: const EdgeInsets.symmetric(horizontal: 12),
     decoration: BoxDecoration(
-      color: const Color.fromARGB(255, 255, 255, 255),
+      color: Colors.white,
       borderRadius: BorderRadius.circular(12),
-      border: Border.all(color: Colors.black26),
+      border: Border.all(color: Colors.grey.shade400, width: 1),
     ),
-    alignment: Alignment.center,
-    child: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
+    child: Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (isFilter)
+          const Icon(
+            Icons.filter_alt_outlined,
+            size: 18,
+            color: Colors.black87,
+          ),
+
+        if (isFilter) const SizedBox(width: 5),
+
+        Text(
+          title,
+          style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+        ),
+
+        if (isFilter) const SizedBox(width: 5),
+
+        if (isFilter)
+          const Icon(
+            Icons.keyboard_arrow_down,
+            size: 18,
+            color: Colors.black87,
+          ),
+      ],
+    ),
   );
 }
 

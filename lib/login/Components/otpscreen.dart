@@ -92,10 +92,10 @@ class _OtpScreenState extends State<OtpScreen> {
               ButtonText: "NEXT",
               ButtonColor: Colorconstants.PrimaryColor,
               ButtononTap: () {
-                Navigator.of(
-                  context,
-                ).push(
-                  MaterialPageRoute(builder: (context) => const BottomNavigation()),
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const BottomNavigation(),
+                  ),
                 );
               },
             ),
