@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
-import 'package:home_bite/login/Home/components/homepage.dart';
+import 'package:home_bite/Home/homepage.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -117,7 +117,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
               label,
               style: FontConstants.inter(
                 color: isSelected ? Colorconstants.PrimaryColor : Colors.black,
-                fontSize: 10,
+                fontSize: 13,
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
               ),
               textAlign: TextAlign.center,

@@ -23,4 +23,11 @@ class Imageconstants {
   static const String JUICE = 'assets/juice.png';
   static const String MAIN = 'assets/main.png';
   static const String CUSTOM = 'assets/custom.png';
+  static const String BRIYANILISING = 'assets/briyanilisting.png';
+  static const String PROFILE = 'assets/profile.png';
+  static const String BABY = 'assets/baby.png';
+  static const String DANGER = 'assets/danger.png';
+  static const String GREENDOT = 'assets/greendot.png';
+  static const String STAR = 'assets/star.png';
+  static const String FULLBRIYANI = 'assets/fullbriyani.png';
 }

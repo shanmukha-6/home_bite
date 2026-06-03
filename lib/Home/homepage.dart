@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
+import 'package:home_bite/Home/Components/biryanidetails.dart';
+import 'package:home_bite/Home/Components/customizescreen.dart';
 import 'package:sizer/sizer.dart';
 
 class HomePage extends StatefulWidget {
@@ -341,47 +343,44 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Positioned(
-                  top: 95,
-                  left: 20,
+                  top: 90,
+                  left: 10,
                   child: Image.asset("assets/main.png", scale: 4),
                 ),
                 Positioned(
-                  top: 320,
-                  left: 140,
+                  top: 325,
+                  left: 110,
                   child: Container(
-                    height: 2.5.h,
+                    height: 3.h,
                     width: 21.w,
                     decoration: BoxDecoration(
                       color: Colorconstants.PrimaryColor,
-                      borderRadius: BorderRadius.circular(6),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 2, left: 2),
+                      padding: const EdgeInsets.only(top: 5, left: 6),
                       child: Text(
                         "Just At ₹200",
-                        style: TextStyle(
-                          color: const Color.fromARGB(255, 233, 219, 63),
-                          fontSize: 16,
-                        ),
+                        style: TextStyle(color: Colors.yellow, fontSize: 14),
                       ),
                     ),
                   ),
                 ),
                 Positioned(
                   top: 70,
-                  left: 50,
+                  left: 45,
 
                   child: Text(
                     "Burger,Pizza And More",
                     style: FontConstants.kavoon(
                       color: Colors.white,
-                      fontSize: 19.sp,
+                      fontSize: 18.sp,
                     ),
                   ),
                 ),
                 Positioned(
-                  top: 350,
-                  left: 130,
+                  top: 355,
+                  left: 112,
                   child: Text(
                     "Order Yor Favourite Meal",
                     style: TextStyle(
@@ -446,21 +445,21 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox(height: 1.h),
-
-            Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: SizedBox(
-                height: 33,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    categoryItem("Filters", isFilter: true),
-                    categoryItem("New to You"),
-                    categoryItem("Offers"),
-                    categoryItem("Rating 4.0"),
-                    categoryItem("Overview"),
-                  ],
-                ),
+            SizedBox(
+              height: 33,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.only(left: 10),
+                children: [
+                  categoryItem("Filter"),
+                  categoryItem("New to you  "),
+                  categoryItem("Offers"),
+                  categoryItem("Fast Delivery"),
+                  categoryItem("Rating 4.0+"),
+                  categoryItem("Pure Veg"),
+                  categoryItem("Low Price"),
+                  categoryItem("Cuisines"),
+                ],
               ),
             ),
             SizedBox(height: 1.h),
@@ -483,19 +482,23 @@ class _HomePageState extends State<HomePage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  foodTile("assets/briyani.png", "Biryani"),
-                  foodTile("assets/icecream.png", "Ice Creams"),
-                  foodTile("assets/burger.png", "Burgers"),
-                  foodTile("assets/dosa.png", "Dosa"),
-                  foodTile("assets/idly.png", "Idli"),
-                  foodTile("assets/salad.png", "salad"),
-                  foodTile("assets/pasta.png", "pasta"),
-                  foodTile("assets/Momos.png", "Momos"),
-                  foodTile("assets/desserts.png", "Desserts"),
-                  foodTile("assets/cake.png", "Cake"),
-                  foodTile("assets/pizza.png", "Pizza"),
-                  foodTile("assets/noodels.png", "Noodels"),
-                  foodTile("assets/juice.png", "Juice"),
+                  foodTile("assets/briyani.png", "Biryani", () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => BiryaniScreen()),
+                    );
+                  }),
+                  foodTile("assets/icecream.png", "Ice Creams", () {}),
+                  foodTile("assets/burger.png", "Burgers", () {}),
+                  foodTile("assets/dosa.png", "Dosa", () {}),
+                  foodTile("assets/idly.png", "Idli", () {}),
+                  foodTile("assets/salad.png", "salad", () {}),
+                  foodTile("assets/pasta.png", "pasta", () {}),
+                  foodTile("assets/Momos.png", "Momos", () {}),
+                  foodTile("assets/desserts.png", "Desserts", () {}),
+                  foodTile("assets/cake.png", "Cake", () {}),
+                  foodTile("assets/pizza.png", "Pizza", () {}),
+                  foodTile("assets/noodels.png", "Noodels", () {}),
+                  foodTile("assets/juice.png", "Juice", () {}),
                 ],
               ),
             ),
@@ -516,13 +519,13 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 1.5.h),
             SizedBox(
-              height: 155,
+              height: 145,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 4,
                 itemBuilder: (context, index) {
                   return Container(
-                    width: 60.w,
+                    width: 45.w,
                     margin: const EdgeInsets.only(left: 12, right: 5),
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
@@ -545,7 +548,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             /// IMAGE
                             CircleAvatar(
-                              radius: 26,
+                              radius: 22,
                               backgroundImage: AssetImage(
                                 "assets/homechef.png",
                               ),
@@ -559,11 +562,11 @@ class _HomePageState extends State<HomePage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 15),
-                                    child: Text(
+                                    padding: const EdgeInsets.only(left: 5),
+                                    child: const Text(
                                       "Chef Laxmi",
-                                      style: FontConstants.inter(
-                                        fontSize: 17.sp,
+                                      style: TextStyle(
+                                        fontSize: 17,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -574,7 +577,7 @@ class _HomePageState extends State<HomePage> {
                                   Row(
                                     children: const [
                                       Padding(
-                                        padding: EdgeInsets.only(left: 15),
+                                        padding: EdgeInsets.only(left: 5),
                                         child: Text(
                                           "Ratings",
                                           style: TextStyle(
@@ -602,43 +605,17 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                     ],
                                   ),
-                                  Column(
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 3,
-                                              left: 15,
-                                            ),
-                                            child: Text("Specialities:"),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 2,
-                                            ),
-                                            child: Text(
-                                              "Biryani",
-                                              style: FontConstants.inter(
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
                                 ],
                               ),
                             ),
                           ],
                         ),
 
-                        const SizedBox(height: 7),
+                        const SizedBox(height: 10),
 
                         /// HYGIENE
                         Padding(
-                          padding: const EdgeInsets.only(left: 70),
+                          padding: const EdgeInsets.only(left: 5),
                           child: RichText(
                             text: const TextSpan(
                               children: [
@@ -666,61 +643,25 @@ class _HomePageState extends State<HomePage> {
                         const Spacer(),
 
                         /// BUTTON
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: 117,
-                              height: 32,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color.fromARGB(
-                                    255,
-                                    255,
-                                    255,
-                                    255,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  side: BorderSide(
-                                    color: Colorconstants.PrimaryColor,
-                                    width: 1.4,
-                                  ),
-                                ),
-                                onPressed: () {},
-                                child: const Text(
-                                  "View Menu",
-                                  style: TextStyle(
-                                    color: Colorconstants.PrimaryColor,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 15,
-                                  ),
-                                ),
+                        SizedBox(
+                          width: double.infinity,
+                          height: 35,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFF064B18),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            SizedBox(width: 1.5.w),
-                            SizedBox(
-                              width: 117,
-                              height: 32,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFF064B18),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                ),
-                                onPressed: () {},
-                                child: const Text(
-                                  "Customize",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
+                            onPressed: () {},
+                            child: const Text(
+                              "View Profile",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
-                          ],
+                          ),
                         ),
                       ],
                     ),
@@ -804,202 +745,209 @@ class _HomePageState extends State<HomePage> {
                   childAspectRatio: 1.45,
                 ),
                 itemBuilder: (context, index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.shade300,
-                          blurRadius: 6,
-                          offset: const Offset(0, 3),
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => CustomizationScreen(),
                         ),
-                      ],
-                    ),
-
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        /// IMAGE SECTION
-                        Stack(
-                          children: [
-                            /// IMAGE
-                            Container(
-                              height: 21.h,
-                              decoration: BoxDecoration(
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(16),
-                                  topRight: Radius.circular(16),
-                                ),
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                    index == 0
-                                        ? "https://images.unsplash.com/photo-1577219491135-ce391730fb2c"
-                                        : index == 1
-                                        ? "https://images.unsplash.com/photo-1589302168068-964664d93dc0"
-                                        : index == 2
-                                        ? "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"
-                                        : "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-
-                            /// OFFER TAG
-                            Positioned(
-                              top: 0,
-                              left: 0,
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 12,
-                                  vertical: 7,
-                                ),
-                                decoration: const BoxDecoration(
-                                  color: Color(0xFF064B18),
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(16),
-                                    bottomRight: Radius.circular(10),
-                                  ),
-                                ),
-                                child: Text(
-                                  index == 2 ? "Flat 20% Off" : "Flat 10% Off",
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 13,
-                                  ),
-                                ),
-                              ),
-                            ),
-
-                            /// FAVORITE ICON
-                            Positioned(
-                              top: 10,
-                              right: 10,
-                              child: CircleAvatar(
-                                radius: 16,
-                                backgroundColor: Colors.white,
-                                child: const Icon(
-                                  Icons.favorite_border,
-                                  size: 18,
-                                  color: Colors.black87,
-                                ),
-                              ),
-                            ),
-
-                            /// RATING
-                            Positioned(
-                              bottom: 0,
-                              right: 0,
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 6,
-                                  vertical: 3,
-                                ),
-                                decoration: const BoxDecoration(
-                                  color: Color.fromARGB(255, 11, 72, 13),
-                                  border: Border(
-                                    top: BorderSide(color: Colors.white),
-                                    left: BorderSide(color: Colors.white),
-                                  ),
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(8),
-                                  ),
-                                ),
-                                child: Text(
-                                  index == 1 ? "4.6 ★" : "4.8 ★",
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 11,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-
-                        /// DETAILS
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 10,
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.shade300,
+                            blurRadius: 6,
+                            offset: const Offset(0, 3),
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              /// TITLE + PRICE
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      index == 0
-                                          ? "Biryani bliss Kitchen"
-                                          : index == 1
-                                          ? "Deluxe Veg Meal"
-                                          : index == 2
-                                          ? "Punjabi Dhaba"
-                                          : "Royal Food Court",
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
+                        ],
+                      ),
 
-                                  const Text(
-                                    "₹200 For One",
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.black87,
-                                    ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          /// IMAGE SECTION
+                          Stack(
+                            children: [
+                              /// IMAGE
+                              Container(
+                                height: 21.h,
+                                decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(16),
+                                    topRight: Radius.circular(16),
                                   ),
-                                ],
+                                  image: DecorationImage(
+                                    image: NetworkImage(
+                                      index == 0
+                                          ? "https://images.unsplash.com/photo-1606491956689-2ea866880c84"
+                                          : index == 1
+                                          ? "https://images.unsplash.com/photo-1606491956689-2ea866880c84"
+                                          : index == 2
+                                          ? "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"
+                                          : "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
 
-                              const SizedBox(height: 7),
-
-                              /// SUBTITLE + TIME
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      index == 0
-                                          ? "Hyderabadi Biryani Party Pack"
-                                          : index == 1
-                                          ? "Complete meal with roti, rice"
-                                          : index == 2
-                                          ? "North Indian Special Meals"
-                                          : "Best food combos available",
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: const TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.black54,
-                                      ),
+                              /// OFFER TAG
+                              Positioned(
+                                top: 0,
+                                left: 0,
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 12,
+                                    vertical: 7,
+                                  ),
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xFF064B18),
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(16),
+                                      bottomRight: Radius.circular(10),
                                     ),
                                   ),
+                                  child: Text(
+                                    index == 2
+                                        ? "Flat 20% Off"
+                                        : "Flat 10% Off",
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ),
+                              ),
 
-                                  const Text(
-                                    "30 Min .1.1Km",
-                                    style: TextStyle(
+                              /// FAVORITE ICON
+                              Positioned(
+                                top: 10,
+                                right: 10,
+                                child: CircleAvatar(
+                                  radius: 16,
+                                  backgroundColor: Colors.white,
+                                  child: const Icon(
+                                    Icons.favorite_border,
+                                    size: 18,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                              ),
+
+                              /// RATING
+                              Positioned(
+                                bottom: 0,
+                                right: 0,
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 6,
+                                    vertical: 3,
+                                  ),
+                                  decoration: const BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(8),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    index == 1 ? "4.6 ★" : "4.8 ★",
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
                                       fontSize: 11,
-                                      color: Colors.black54,
                                     ),
                                   ),
-                                ],
+                                ),
                               ),
                             ],
                           ),
-                        ),
-                      ],
+
+                          /// DETAILS
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 10,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                /// TITLE + PRICE
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        index == 0
+                                            ? "Biryani bliss Kitchen"
+                                            : index == 1
+                                            ? "Deluxe Veg Meal"
+                                            : index == 2
+                                            ? "Punjabi Dhaba"
+                                            : "Royal Food Court",
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: const TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+
+                                    const Text(
+                                      "₹200 For One",
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.black87,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                const SizedBox(height: 7),
+
+                                /// SUBTITLE + TIME
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        index == 0
+                                            ? "Hyderabadi Biryani Party Pack"
+                                            : index == 1
+                                            ? "Complete meal with roti, rice"
+                                            : index == 2
+                                            ? "North Indian Special Meals"
+                                            : "Best food combos available",
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.black54,
+                                        ),
+                                      ),
+                                    ),
+
+                                    const Text(
+                                      "30 Min .1.1Km",
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                        color: Colors.black54,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },
@@ -1012,66 +960,66 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget categoryItem(String title, {bool isFilter = false}) {
+Widget categoryItem(String title) {
   return Container(
     margin: const EdgeInsets.only(right: 12),
     padding: const EdgeInsets.symmetric(horizontal: 12),
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(12),
-      border: Border.all(color: Colors.grey.shade400, width: 1),
+      border: Border.all(color: Colors.black26),
     ),
     child: Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (isFilter)
+        if (title == "Filter") ...[
           const Icon(
             Icons.filter_alt_outlined,
             size: 18,
             color: Colors.black87,
           ),
+          const SizedBox(width: 5),
+        ],
 
-        if (isFilter) const SizedBox(width: 5),
+        Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
 
-        Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
-        ),
-
-        if (isFilter) const SizedBox(width: 5),
-
-        if (isFilter)
+        if (title == "Filter") ...[
+          const SizedBox(width: 5),
           const Icon(
             Icons.keyboard_arrow_down,
             size: 18,
             color: Colors.black87,
           ),
+        ],
       ],
     ),
   );
 }
 
-Widget foodTile(String image, String title) {
-  return SizedBox(
-    width: 80,
-    child: ListTile(
-      contentPadding: EdgeInsets.zero,
-      title: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            backgroundColor: Colors.white,
+Widget foodTile(String image, String title, VoidCallback onTap) {
+  return GestureDetector(
+    onTap: onTap,
+    child: SizedBox(
+      width: 80,
+      child: ListTile(
+        contentPadding: EdgeInsets.zero,
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              backgroundColor: Colors.white,
 
-            radius: 25,
-            backgroundImage: AssetImage(image),
-          ),
-          const SizedBox(height: 5),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 13),
-          ),
-        ],
+              radius: 25,
+              backgroundImage: AssetImage(image),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 13),
+            ),
+          ],
+        ),
       ),
     ),
   );
