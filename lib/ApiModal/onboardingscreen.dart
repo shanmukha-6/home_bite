@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
 import 'package:home_bite/Constants/ImageConstants.dart';
-import 'package:home_bite/login/Components/loginscreen.dart';
+import 'package:home_bite/login/loginscreen.dart';
 import 'package:sizer/sizer.dart';
 
 class OnBoardingscreen extends StatefulWidget {

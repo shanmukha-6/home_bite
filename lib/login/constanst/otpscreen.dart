@@ -5,8 +5,9 @@ import 'package:home_bite/Constants/FontConstants.dart';
 import 'package:home_bite/Constants/ImageConstants.dart';
 import 'package:home_bite/Responsive.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:home_bite/components/button.dart';
+
 import 'package:home_bite/bottomnavigation.dart';
+import 'package:home_bite/button.dart';
 import 'package:sizer/sizer.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -92,10 +93,10 @@ class _OtpScreenState extends State<OtpScreen> {
               ButtonText: "NEXT",
               ButtonColor: Colorconstants.PrimaryColor,
               ButtononTap: () {
-                Navigator.of(
-                  context,
-                ).push(
-                  MaterialPageRoute(builder: (context) => const BottomNavigation()),
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const BottomNavigation(),
+                  ),
                 );
               },
             ),

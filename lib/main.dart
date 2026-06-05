@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/AppTheme.dart';
-import 'package:home_bite/login/Components/loginscreen.dart';
-import 'package:home_bite/login/Components/otpscreen.dart';
-import 'package:home_bite/login/Components/splashscreen.dart';
-
+import 'package:home_bite/Home/Components/biryanidetails.dart';
+import 'package:home_bite/Home/Components/biryanilisting.dart';
+import 'package:home_bite/Home/Components/cardsummary.dart';
+import 'package:home_bite/Home/Components/paymentoption.dart';
+import 'package:home_bite/login/loginscreen.dart';
+import 'package:home_bite/login/constanst/otpscreen.dart';
+import 'package:home_bite/login/constanst/splashscreen.dart';
+import 'package:home_bite/button.dart';
+import 'package:home_bite/Home/homepage.dart';
 import 'package:sizer/sizer.dart';
-
-import 'login/Home/components/homepage.dart';
 
 void main() {
   runApp(const MyApp());
