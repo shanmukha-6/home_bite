@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
 import 'package:home_bite/Home/Components/biryanilisting.dart';
 import 'package:sizer/sizer.dart';
@@ -18,8 +19,55 @@ class _BiryaniScreenState extends State<BiryaniScreen> {
         backgroundColor: Colors.white,
         body: ListView(
           children: [
-            const SizedBox(height: 15),
-
+            Container(
+              height: 10.h,
+              width: 100.w,
+              decoration: BoxDecoration(color: Colorconstants.PrimaryColor),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 3.h),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pop(context);
+                          },
+                          child: Icon(
+                            Icons.arrow_back,
+                            size: 25,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 7),
+                        child: Text(
+                          "Kitchens",
+                          style: FontConstants.inter(
+                            fontSize: 18.sp,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50),
+                    child: Text(
+                      "Your Order Is Here",
+                      style: FontConstants.inter(
+                        color: Colors.white,
+                        fontSize: 16.sp,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 2.h),
             SizedBox(
               height: 33,
               child: ListView(
@@ -58,7 +106,7 @@ class _BiryaniScreenState extends State<BiryaniScreen> {
               itemBuilder: (context, index) {
                 return foodCard(
                   image:
-                      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c",
+                      "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
                   offer: index == 0 ? "Flat 50%\nOff" : "Items At\n₹200",
                   title: index == 0
                       ? "Biryani bliss Kitchen"

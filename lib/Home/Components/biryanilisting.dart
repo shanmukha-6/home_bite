@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
+import 'package:home_bite/Home/Components/cardsummary.dart';
 import 'package:sizer/sizer.dart';
 
 class BiryaniListingScreen extends StatefulWidget {
@@ -89,7 +90,7 @@ class _BiryaniListingScreenState extends State<BiryaniListingScreen> {
       isScrollControlled: true,
       builder: (context) {
         return Container(
-          height: 200,
+          height: 230,
           padding: const EdgeInsets.all(20),
           decoration: const BoxDecoration(
             color: Colors.white,
@@ -331,9 +332,21 @@ class _BiryaniListingScreenState extends State<BiryaniListingScreen> {
                                             8,
                                           ),
                                         ),
-                                        child: const Text(
-                                          "Add Item ₹400",
-                                          style: TextStyle(color: Colors.white),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    CardSummaryScreen(),
+                                              ),
+                                            );
+                                          },
+                                          child: const Text(
+                                            "Add Item ₹400",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -572,6 +585,24 @@ class _BiryaniListingScreenState extends State<BiryaniListingScreen> {
                   fit: BoxFit.cover,
                 ),
               ),
+            ),
+          ),
+          Positioned(
+            top: 40,
+            left: 20,
+            child: Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pop(context);
+                  },
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    size: 30,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

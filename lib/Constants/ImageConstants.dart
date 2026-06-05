@@ -30,4 +30,9 @@ class Imageconstants {
   static const String GREENDOT = 'assets/greendot.png';
   static const String STAR = 'assets/star.png';
   static const String FULLBRIYANI = 'assets/fullbriyani.png';
+  static const String ZINGER = 'assets/zinger.png';
+  static const String BRIYANI1 = 'assets/briyani1.png';
+  static const String SALAD1 = 'assets/salad1.png';
+  static const String PHONEPEY = 'assets/phonepey.png';
+  static const String GPAY = 'assets/gpay.png';
 }
