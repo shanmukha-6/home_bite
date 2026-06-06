@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
-import 'package:home_bite/Home/Components/cardsummary.dart';
+import 'package:home_bite/briyaniComponents/cardsummary.dart';
 import 'package:sizer/sizer.dart';
 
 class BiryaniListingScreen extends StatefulWidget {

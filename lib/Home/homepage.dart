@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
-import 'package:home_bite/Home/Components/biryanidetails.dart';
-import 'package:home_bite/Home/Components/customizescreen.dart';
+import 'package:home_bite/briyaniComponents/biryanidetails.dart';
+import 'package:home_bite/briyaniComponents/customizescreen.dart';
+import 'package:home_bite/briyaniComponents/trackorderscreeen.dart';
 import 'package:sizer/sizer.dart';
 
 class HomePage extends StatefulWidget {
@@ -503,6 +504,105 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox(height: 1.5.h),
+            Stack(
+              children: [
+                Container(
+                  height: 14.h,
+                  width: 90.w,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFF0FFF4),
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(
+                      color: Color.fromARGB(255, 85, 106, 91),
+                      width: 2,
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, top: 5),
+                        child: Text(
+                          "Your Order Is On The Way",
+                          style: FontConstants.inter(
+                            fontSize: 17.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 1.h),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text(
+                          "Chicken Biryani",
+                          style: FontConstants.inter(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 0.3.h),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text(
+                          "From Biryani Kitchen",
+                          style: FontConstants.inter(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 0.8.h),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text(
+                          "Arriving In 12 Min",
+                          style: FontConstants.inter(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  top: 109,
+                  left: 20,
+
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => Trackorderscreeen(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      height: 2.h,
+                      width: 14.w,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 12, 57, 14),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 14, top: 1),
+                        child: Text(
+                          "Track Order",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: 30,
+                  left: 320,
+                  child: Image.asset("assets/deliveryhome.png", scale: 4),
+                ),
+              ],
+            ),
+            SizedBox(height: 1.h),
             Row(
               children: [
                 Padding(

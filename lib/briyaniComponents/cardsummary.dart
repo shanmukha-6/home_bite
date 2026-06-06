@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
-import 'package:home_bite/Home/Components/paymentoption.dart';
+import 'package:home_bite/briyaniComponents/paymentoption.dart';
 import 'package:sizer/sizer.dart';
 
 class CardSummaryScreen extends StatefulWidget {

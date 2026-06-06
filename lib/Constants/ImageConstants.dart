@@ -35,4 +35,6 @@ class Imageconstants {
   static const String SALAD1 = 'assets/salad1.png';
   static const String PHONEPEY = 'assets/phonepey.png';
   static const String GPAY = 'assets/gpay.png';
+  static const String DELIVERYBOY = 'assets/deliveryboy.png';
+  static const String DELIVERYHOME = 'assets/deliveryhome.png';
 }
