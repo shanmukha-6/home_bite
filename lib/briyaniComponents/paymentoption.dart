@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
+import 'package:home_bite/briyaniComponents/cardsummary.dart';
+import 'package:home_bite/briyaniComponents/creditcarddetails.dart';
 import 'package:home_bite/button.dart';
 import 'package:sizer/sizer.dart';
 
@@ -241,12 +243,21 @@ class _PaymentScreenState extends State<PaymentScreen> {
                               SizedBox(height: 1.7.h),
                               Padding(
                                 padding: const EdgeInsets.only(left: 15),
-                                child: Text(
-                                  "+ Add New Card",
-                                  style: FontConstants.inter(
-                                    color: Colors.blue,
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.bold,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => CardScreen(),
+                                      ),
+                                    );
+                                  },
+                                  child: Text(
+                                    "+ Add New Card",
+                                    style: FontConstants.inter(
+                                      color: Colors.blue,
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -263,19 +274,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       ),
                     ],
                   ),
-                ),
-                SizedBox(height: 12.h),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: Size(87.w, 4.8.h),
-                    backgroundColor: Colorconstants.PrimaryColor,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusGeometry.circular(10),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text("Next"),
                 ),
               ],
             ),

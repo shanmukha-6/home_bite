@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:home_bite/ApiModal/onboardingscreen.dart';
-import 'package:home_bite/Responsive.dart';
 import 'package:home_bite/Constants/ImageConstants.dart';
 
 import 'package:sizer/sizer.dart';

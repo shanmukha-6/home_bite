@@ -5,7 +5,7 @@ import 'package:home_bite/Constants/FontConstants.dart';
 import 'package:home_bite/Constants/ImageConstants.dart';
 import 'package:home_bite/button.dart';
 
-import 'package:home_bite/login/constanst/otpscreen.dart';
+import 'package:home_bite/login/constansts/otpscreen.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginScreen extends StatefulWidget {

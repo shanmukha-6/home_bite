@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
-import 'package:home_bite/Home/Components/biryanilisting.dart';
+import 'package:home_bite/briyaniComponents/biryanilisting.dart';
 import 'package:sizer/sizer.dart';
 
 class BiryaniScreen extends StatefulWidget {
@@ -57,7 +57,7 @@ class _BiryaniScreenState extends State<BiryaniScreen> {
                   Padding(
                     padding: const EdgeInsets.only(left: 50),
                     child: Text(
-                      "Your Order Is Here",
+                      "Your Recipes Listingsss",
                       style: FontConstants.inter(
                         color: Colors.white,
                         fontSize: 16.sp,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:home_bite/ApiServices.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
 import 'package:home_bite/Constants/ImageConstants.dart';
-import 'package:home_bite/Responsive.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
 import 'package:home_bite/bottomnavigation.dart';
