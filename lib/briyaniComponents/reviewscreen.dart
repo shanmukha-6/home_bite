@@ -14,6 +14,7 @@ class _ReviewscreenState extends State<Reviewscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -60,7 +61,7 @@ class _ReviewscreenState extends State<Reviewscreen> {
               ],
             ),
           ),
-          SizedBox(height: 4.h),
+          SizedBox(height: 2.h),
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Container(
@@ -253,6 +254,54 @@ class _ReviewscreenState extends State<Reviewscreen> {
                         ),
                       ),
                     ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 43.h),
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Container(
+              height: 4.5.h,
+              width: 95.w,
+              decoration: BoxDecoration(
+                color: Colorconstants.PrimaryColor,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Text(
+                      "Pre Order Food",
+                      style: FontConstants.inter(
+                        color: Colors.white,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 180),
+                    child: Container(
+                      height: 3.h,
+                      width: 23.w,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 19, top: 5),
+                        child: Text(
+                          "Schedule",
+                          style: TextStyle(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

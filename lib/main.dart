@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/AppTheme.dart';
+import 'package:home_bite/Home/Bulkorder/bulkordertwo.dart';
+import 'package:home_bite/Home/Bulkorder/customizebulk.dart';
+import 'package:home_bite/Home/LunchBox/bitescreen.dart';
+import 'package:home_bite/Home/LunchBox/lunchcustomscreen.dart';
+import 'package:home_bite/Home/LunchBox/lunchhomescreen.dart';
+import 'package:home_bite/Home/locationscreen.dart';
+import 'package:home_bite/Home/notification.dart';
+import 'package:home_bite/Home/profile/favorite.dart';
+import 'package:home_bite/Home/profile/profilescreen.dart';
 import 'package:home_bite/briyaniComponents/biryanidetails.dart';
 import 'package:home_bite/briyaniComponents/biryanilisting.dart';
 import 'package:home_bite/briyaniComponents/creditcarddetails.dart';
@@ -31,7 +40,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'HomeBite',
           theme: AppTheme.light(),
-          home: splashscreen(),
+          home: FavoriteScreen(),
         );
       },
     );

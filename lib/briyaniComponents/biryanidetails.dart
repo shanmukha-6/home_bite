@@ -92,28 +92,37 @@ class _BiryaniScreenState extends State<BiryaniScreen> {
 
             SizedBox(height: 2.h),
 
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: 4,
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 2,
-                mainAxisSpacing: 1,
-                childAspectRatio: 1.12,
-              ),
-              itemBuilder: (context, index) {
-                return foodCard(
-                  image:
-                      "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
-                  offer: index == 0 ? "Flat 50%\nOff" : "Items At\n₹200",
-                  title: index == 0
-                      ? "Biryani bliss Kitchen"
-                      : "Deluxe Non Veg Meal",
-                  description: "Hyderabadi Biryani Party Pack",
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => BiryaniListingScreen(),
+                  ),
                 );
               },
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 4,
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 2,
+                  mainAxisSpacing: 1,
+                  childAspectRatio: 1.12,
+                ),
+                itemBuilder: (context, index) {
+                  return foodCard(
+                    image:
+                        "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+                    offer: index == 0 ? "Flat 50%\nOff" : "Items At\n₹200",
+                    title: index == 0
+                        ? "Biryani bliss Kitchen"
+                        : "Deluxe Non Veg Meal",
+                    description: "Hyderabadi Biryani Party Pack",
+                  );
+                },
+              ),
             ),
 
             const SizedBox(height: 7),

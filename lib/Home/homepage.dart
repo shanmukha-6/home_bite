@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
+import 'package:home_bite/Home/Bulkorder/bulkhomescreen.dart';
+import 'package:home_bite/Home/Bulkorder/bulkordermenu.dart';
+import 'package:home_bite/Home/SpecialOrder/specialhomescreen.dart';
+import 'package:home_bite/Home/locationscreen.dart';
+import 'package:home_bite/Home/notification.dart';
 import 'package:home_bite/briyaniComponents/biryanidetails.dart';
+import 'package:home_bite/briyaniComponents/biryanilisting.dart';
+import 'package:home_bite/briyaniComponents/cardsummary.dart';
 import 'package:home_bite/briyaniComponents/customizescreen.dart';
 import 'package:home_bite/briyaniComponents/trackorderscreeen.dart';
 import 'package:sizer/sizer.dart';
@@ -32,10 +39,19 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 17),
-                        child: Icon(
-                          Icons.location_on_outlined,
-                          size: 19.sp,
-                          color: Colors.white,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => LocationScreen(),
+                              ),
+                            );
+                          },
+                          child: Icon(
+                            Icons.location_on_outlined,
+                            size: 19.sp,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       Padding(
@@ -58,10 +74,19 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 95),
-                        child: Icon(
-                          Icons.notifications_none_outlined,
-                          size: 19.sp,
-                          color: Colors.white,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => NotificationScreen(),
+                              ),
+                            );
+                          },
+                          child: Icon(
+                            Icons.notifications_none_outlined,
+                            size: 19.sp,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       Padding(
@@ -183,109 +208,127 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 20),
-                          child: Container(
-                            height: 10.h,
-                            width: 19.w,
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 41, 90, 54),
-                              border: Border.all(
-                                color: Color.fromARGB(255, 197, 197, 197),
-                              ),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(25),
-                                bottomRight: Radius.circular(25),
-                                bottomLeft: Radius.circular(7),
-                                topRight: Radius.circular(1),
-                              ),
-                            ),
-                            clipBehavior: Clip.hardEdge,
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsGeometry.only(top: 4),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => HomeScreen(),
                                 ),
-                                Image.asset(
-                                  "assets/hometop3.png",
-                                  fit: BoxFit.contain,
+                              );
+                            },
+                            child: Container(
+                              height: 10.h,
+                              width: 19.w,
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 41, 90, 54),
+                                border: Border.all(
+                                  color: Color.fromARGB(255, 197, 197, 197),
                                 ),
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(25),
+                                  bottomRight: Radius.circular(25),
+                                  bottomLeft: Radius.circular(7),
+                                  topRight: Radius.circular(1),
+                                ),
+                              ),
+                              clipBehavior: Clip.hardEdge,
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsGeometry.only(top: 4),
+                                  ),
+                                  Image.asset(
+                                    "assets/hometop3.png",
+                                    fit: BoxFit.contain,
+                                  ),
 
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 4),
-                                  child: Text(
-                                    " Bulk ",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14.sp,
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 4),
+                                    child: Text(
+                                      " Bulk ",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14.sp,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 1),
-                                  child: Text(
-                                    "  Orders",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14.sp,
+                                  Padding(
+                                    padding: const EdgeInsets.only(bottom: 1),
+                                    child: Text(
+                                      "  Orders",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14.sp,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 20, right: 20),
-                          child: Container(
-                            height: 10.h,
-                            width: 19.w,
-                            decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 41, 90, 54),
-                              border: Border.all(
-                                color: Color.fromARGB(255, 197, 197, 197),
-                              ),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(25),
-                                bottomRight: Radius.circular(25),
-                                bottomLeft: Radius.circular(10),
-                                topRight: Radius.circular(1),
-                              ),
-                            ),
-                            clipBehavior: Clip.hardEdge,
-                            child: Column(
-                              children: [
-                                Expanded(
-                                  child: Image.asset(
-                                    "assets/hometop4.png",
-                                    fit: BoxFit.contain,
-                                  ),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => Specialhomescreen(),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    left: 2,
-                                    top: 2,
-                                  ),
-                                  child: Text(
-                                    "Special",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15.sp,
+                              );
+                            },
+                            child: Container(
+                              height: 10.h,
+                              width: 19.w,
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 41, 90, 54),
+                                border: Border.all(
+                                  color: Color.fromARGB(255, 197, 197, 197),
+                                ),
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(25),
+                                  bottomRight: Radius.circular(25),
+                                  bottomLeft: Radius.circular(10),
+                                  topRight: Radius.circular(1),
+                                ),
+                              ),
+                              clipBehavior: Clip.hardEdge,
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: Image.asset(
+                                      "assets/hometop4.png",
+                                      fit: BoxFit.contain,
                                     ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    left: 2,
-                                    top: 2,
-                                  ),
-                                  child: Text(
-                                    "orders",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15.sp,
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 2,
+                                      top: 2,
+                                    ),
+                                    child: Text(
+                                      "Special",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 15.sp,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 2,
+                                      top: 2,
+                                    ),
+                                    child: Text(
+                                      "orders",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 15.sp,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -753,7 +796,13 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => BiryaniListingScreen(),
+                                ),
+                              );
+                            },
                             child: const Text(
                               "View Profile",
                               style: TextStyle(
@@ -783,24 +832,33 @@ class _HomePageState extends State<HomePage> {
                   childAspectRatio: 1.6,
                 ),
                 itemBuilder: (context, index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                          'https://images.unsplash.com/photo-1504674900247-0877df9cc836',
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => BiryaniScreen(),
                         ),
-                        fit: BoxFit.cover,
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: const DecorationImage(
+                          image: NetworkImage(
+                            'https://images.unsplash.com/photo-1504674900247-0877df9cc836',
+                          ),
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 5, top: 63),
-                      child: Text(
-                        "Order Only \n Curries",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.bold,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 5, top: 63),
+                        child: Text(
+                          "Order Only \n Curries",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),

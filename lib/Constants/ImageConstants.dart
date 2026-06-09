@@ -37,4 +37,22 @@ class Imageconstants {
   static const String GPAY = 'assets/gpay.png';
   static const String DELIVERYBOY = 'assets/deliveryboy.png';
   static const String DELIVERYHOME = 'assets/deliveryhome.png';
+  static const String CIRCLETICK = 'assets/circletick.png';
+  static const String SPECIAL = 'assets/special.png';
+  static const String LUNCH1 = 'assets/lunch 1.png';
+  static const String LUNCH2 = 'assets/lunch 2.png';
+  static const String SNACKS = 'assets/snacks.png';
+  static const String FRENCH = 'assets/french.png';
+  static const String SPICES = 'assets/spices.png';
+  static const String EGG = 'assets/egg.png';
+  static const String DYNAMIC = 'assets/dynamic.png';
+  static const String SWEET = 'assets/sweet.png';
+  static const String PROFILE2 = 'assets/profile2.png';
+
+  ///ICONS
+  static const String HEART = 'assets/heart.png';
+  static const String ORDERS = 'assets/order.png';
+  static const String PAYMENTS = 'assets/payment.png';
+  static const String SUBSCRIBE = 'assets/subscribe.png';
+  static const String LOGOUT = 'assets/logout.png';
 }
