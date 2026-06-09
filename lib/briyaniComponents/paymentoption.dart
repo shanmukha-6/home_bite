@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
+import 'package:home_bite/Home/locationscreen.dart';
 import 'package:home_bite/briyaniComponents/cardsummary.dart';
 import 'package:home_bite/briyaniComponents/creditcarddetails.dart';
 import 'package:home_bite/button.dart';
@@ -323,10 +324,19 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 10, top: 12),
-                        child: Icon(
-                          Icons.border_color_outlined,
-                          size: 21,
-                          color: const Color.fromARGB(255, 18, 90, 21),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => LocationScreen(),
+                              ),
+                            );
+                          },
+                          child: Icon(
+                            Icons.border_color_outlined,
+                            size: 21,
+                            color: const Color.fromARGB(255, 18, 90, 21),
+                          ),
                         ),
                       ),
                     ],

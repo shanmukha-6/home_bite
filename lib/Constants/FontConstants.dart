@@ -38,6 +38,22 @@ class FontConstants {
     );
   }
 
+  static TextStyle kumar({
+    double? fontSize,
+    FontWeight? fontWeight,
+    Color? color,
+    double? height,
+    double? letterSpacing,
+  }) {
+    return GoogleFonts.kumarOne(
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
+      height: height,
+      letterSpacing: letterSpacing,
+    );
+  }
+
   static TextStyle KaushanScript({
     double? fontSize,
     FontWeight? fontWeight,

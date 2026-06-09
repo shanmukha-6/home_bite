@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
 import 'package:home_bite/Home/homepage.dart';
+import 'package:home_bite/Home/profile/profilescreen.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -18,7 +19,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     const Center(child: Text("Subscription Screen")),
     const Center(child: Text("Search Screen")),
     const Center(child: Text("Orders Screen")),
-    const Center(child: Text("Profile Screen")),
+    Profilescreen(),
   ];
 
   void _onItemTapped(int index) {
