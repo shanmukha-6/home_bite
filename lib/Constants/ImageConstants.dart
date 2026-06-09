@@ -48,6 +48,7 @@ class Imageconstants {
   static const String DYNAMIC = 'assets/dynamic.png';
   static const String SWEET = 'assets/sweet.png';
   static const String PROFILE2 = 'assets/profile2.png';
+  static const String GIFT = 'assets/gift.png';
 
   ///ICONS
   static const String HEART = 'assets/heart.png';
@@ -55,4 +56,6 @@ class Imageconstants {
   static const String PAYMENTS = 'assets/payment.png';
   static const String SUBSCRIBE = 'assets/subscribe.png';
   static const String LOGOUT = 'assets/logout.png';
+  static const String KEY = 'assets/key.png';
+  static const String GLOBE = 'assets/globe.png';
 }

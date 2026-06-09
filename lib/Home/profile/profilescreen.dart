@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
+import 'package:home_bite/Home/profile/favorite.dart';
+import 'package:home_bite/Home/profile/orderscreen.dart';
+import 'package:home_bite/Home/profile/setting.dart';
 import 'package:sizer/sizer.dart';
 
 class Profilescreen extends StatefulWidget {
@@ -129,10 +132,19 @@ class _ProfilescreenState extends State<Profilescreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 254),
-                    child: Icon(
-                      Icons.arrow_forward_ios,
-                      size: 20,
-                      color: Colors.black,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (conetxt) => FavoriteScreen(),
+                          ),
+                        );
+                      },
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        size: 20,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ],
@@ -156,10 +168,19 @@ class _ProfilescreenState extends State<Profilescreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 285),
-                    child: Icon(
-                      Icons.arrow_forward_ios,
-                      size: 20,
-                      color: Colors.black,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => OrderScreen(),
+                          ),
+                        );
+                      },
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        size: 20,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ],
@@ -237,10 +258,19 @@ class _ProfilescreenState extends State<Profilescreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 285),
-                    child: Icon(
-                      Icons.arrow_forward_ios,
-                      size: 20,
-                      color: Colors.black,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => SettingScreen(),
+                          ),
+                        );
+                      },
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        size: 20,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ],
