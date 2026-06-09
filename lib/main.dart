@@ -7,7 +7,6 @@ import 'package:home_bite/Home/LunchBox/lunchcustomscreen.dart';
 import 'package:home_bite/Home/LunchBox/lunchhomescreen.dart';
 import 'package:home_bite/Home/locationscreen.dart';
 import 'package:home_bite/Home/notification.dart';
-import 'package:home_bite/Home/profile/favorite.dart';
 import 'package:home_bite/Home/profile/profilescreen.dart';
 import 'package:home_bite/briyaniComponents/biryanidetails.dart';
 import 'package:home_bite/briyaniComponents/biryanilisting.dart';
@@ -40,7 +39,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'HomeBite',
           theme: AppTheme.light(),
-          home: FavoriteScreen(),
+          home: splashscreen(),
         );
       },
     );
