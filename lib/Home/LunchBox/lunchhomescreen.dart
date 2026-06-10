@@ -6,6 +6,7 @@ import 'package:home_bite/Home/Bulkorder/customizebulk.dart';
 import 'package:home_bite/Home/LunchBox/bitescreen.dart';
 import 'package:home_bite/Home/LunchBox/lunchcustomscreen.dart';
 import 'package:home_bite/Home/notification.dart';
+import 'package:home_bite/Home/profile/profilescreen.dart';
 import 'package:home_bite/briyaniComponents/biryanidetails.dart';
 import 'package:home_bite/briyaniComponents/customizescreen.dart';
 import 'package:home_bite/briyaniComponents/trackorderscreeen.dart';
@@ -81,10 +82,19 @@ class _LunchhomescreenState extends State<Lunchhomescreen> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 9),
-                        child: Icon(
-                          Icons.account_circle_outlined,
-                          size: 19.sp,
-                          color: Colors.white,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => Profilescreen(),
+                              ),
+                            );
+                          },
+                          child: Icon(
+                            Icons.account_circle_outlined,
+                            size: 19.sp,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],
@@ -808,17 +818,17 @@ class _LunchhomescreenState extends State<Lunchhomescreen> {
                         SizedBox(height: 0.8.h),
                         Container(
                           height: 2.5.h,
-                          width: 30.w,
+                          width: 27.w,
                           decoration: BoxDecoration(
                             color: Colorconstants.PrimaryColor,
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 24, top: 1.5),
+                            padding: const EdgeInsets.only(left: 22, top: 1.9),
                             child: Text(
                               "Customize",
                               style: FontConstants.inter(
-                                fontSize: 16.sp,
+                                fontSize: 15.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
@@ -896,17 +906,17 @@ class _LunchhomescreenState extends State<Lunchhomescreen> {
                         SizedBox(height: 0.8.h),
                         Container(
                           height: 2.5.h,
-                          width: 30.w,
+                          width: 27.w,
                           decoration: BoxDecoration(
                             color: Colorconstants.PrimaryColor,
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 24, top: 1.5),
+                            padding: const EdgeInsets.only(left: 22, top: 2),
                             child: Text(
                               "Customize",
                               style: FontConstants.inter(
-                                fontSize: 16.sp,
+                                fontSize: 15.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
@@ -984,17 +994,17 @@ class _LunchhomescreenState extends State<Lunchhomescreen> {
                         SizedBox(height: 0.8.h),
                         Container(
                           height: 2.5.h,
-                          width: 30.w,
+                          width: 27.w,
                           decoration: BoxDecoration(
                             color: Colorconstants.PrimaryColor,
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 24, top: 1.5),
+                            padding: const EdgeInsets.only(left: 24, top: 2),
                             child: Text(
                               "Customize",
                               style: FontConstants.inter(
-                                fontSize: 16.sp,
+                                fontSize: 15.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),

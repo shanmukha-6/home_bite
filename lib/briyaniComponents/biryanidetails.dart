@@ -14,140 +14,136 @@ class BiryaniScreen extends StatefulWidget {
 class _BiryaniScreenState extends State<BiryaniScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: ListView(
-          children: [
-            Container(
-              height: 10.h,
-              width: 100.w,
-              decoration: BoxDecoration(color: Colorconstants.PrimaryColor),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 3.h),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).pop(context);
-                          },
-                          child: Icon(
-                            Icons.arrow_back,
-                            size: 25,
-                            color: Colors.white,
-                          ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: ListView(
+        children: [
+          Container(
+            height: 10.h,
+            width: 100.w,
+            decoration: BoxDecoration(color: Colorconstants.PrimaryColor),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 3.h),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back,
+                          size: 25,
+                          color: Colors.white,
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 7),
-                        child: Text(
-                          "Kitchens",
-                          style: FontConstants.inter(
-                            fontSize: 18.sp,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50),
-                    child: Text(
-                      "Your Recipes Listingsss",
-                      style: FontConstants.inter(
-                        color: Colors.white,
-                        fontSize: 16.sp,
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 7),
+                      child: Text(
+                        "Kitchens",
+                        style: FontConstants.inter(
+                          fontSize: 18.sp,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Text(
+                    "Your Recipes Listingsss",
+                    style: FontConstants.inter(
+                      color: Colors.white,
+                      fontSize: 16.sp,
+                    ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            SizedBox(height: 2.h),
-            SizedBox(
-              height: 33,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.only(left: 10),
-                children: [
-                  categoryItem("Filter"),
-                  categoryItem("New to you"),
-                  categoryItem("Offers"),
-                  categoryItem("Fast Delivery"),
-                  categoryItem("Rating 4.0+"),
-                  categoryItem("Pure Veg"),
-                  categoryItem("Low Price"),
-                  categoryItem("Cuisines"),
-                ],
-              ),
+          ),
+          SizedBox(height: 2.h),
+          SizedBox(
+            height: 33,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.only(left: 10),
+              children: [
+                categoryItem("Filter"),
+                categoryItem("New to you"),
+                categoryItem("Offers"),
+                categoryItem("Fast Delivery"),
+                categoryItem("Rating 4.0+"),
+                categoryItem("Pure Veg"),
+                categoryItem("Low Price"),
+                categoryItem("Cuisines"),
+              ],
             ),
+          ),
 
-            const SizedBox(height: 20),
+          const SizedBox(height: 20),
 
-            sectionTitle("Top Kitchens"),
+          sectionTitle("Top Kitchens"),
 
-            SizedBox(height: 2.h),
+          SizedBox(height: 2.h),
 
-            GestureDetector(
-              onTap: () {
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => BiryaniListingScreen()),
+              );
+            },
+            child: GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: 4,
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 2,
+                mainAxisSpacing: 1,
+                childAspectRatio: 1.12,
+              ),
+              itemBuilder: (context, index) {
+                return foodCard(
+                  image:
+                      "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+                  offer: index == 0 ? "Flat 50%\nOff" : "Items At\n₹200",
+                  title: index == 0
+                      ? "Biryani bliss Kitchen"
+                      : "Deluxe Non Veg Meal",
+                  description: "Hyderabadi Biryani Party Pack",
+                );
+              },
+            ),
+          ),
+
+          const SizedBox(height: 7),
+
+          sectionTitle("Kitchen Special Offers"),
+
+          const SizedBox(height: 10),
+
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: 4,
+            padding: const EdgeInsets.all(10),
+            itemBuilder: (context, index) {
+              return kitchenOfferCard(index, () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => BiryaniListingScreen(),
                   ),
                 );
-              },
-              child: GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: 4,
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 2,
-                  mainAxisSpacing: 1,
-                  childAspectRatio: 1.12,
-                ),
-                itemBuilder: (context, index) {
-                  return foodCard(
-                    image:
-                        "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
-                    offer: index == 0 ? "Flat 50%\nOff" : "Items At\n₹200",
-                    title: index == 0
-                        ? "Biryani bliss Kitchen"
-                        : "Deluxe Non Veg Meal",
-                    description: "Hyderabadi Biryani Party Pack",
-                  );
-                },
-              ),
-            ),
-
-            const SizedBox(height: 7),
-
-            sectionTitle("Kitchen Special Offers"),
-
-            const SizedBox(height: 10),
-
-            ListView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: 4,
-              padding: const EdgeInsets.all(10),
-              itemBuilder: (context, index) {
-                return kitchenOfferCard(index, () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => BiryaniListingScreen(),
-                    ),
-                  );
-                });
-              },
-            ),
-          ],
-        ),
+              });
+            },
+          ),
+        ],
       ),
     );
   }

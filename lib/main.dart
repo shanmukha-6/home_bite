@@ -5,6 +5,7 @@ import 'package:home_bite/Home/Bulkorder/customizebulk.dart';
 import 'package:home_bite/Home/LunchBox/bitescreen.dart';
 import 'package:home_bite/Home/LunchBox/lunchcustomscreen.dart';
 import 'package:home_bite/Home/LunchBox/lunchhomescreen.dart';
+import 'package:home_bite/Home/LunchBox/subscriptionscreen.dart';
 import 'package:home_bite/Home/locationscreen.dart';
 import 'package:home_bite/Home/notification.dart';
 import 'package:home_bite/Home/profile/profilescreen.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'HomeBite',
           theme: AppTheme.light(),
-          home: splashscreen(),
+          home: Subscriptionscreen(),
         );
       },
     );
