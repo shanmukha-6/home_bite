@@ -3,6 +3,7 @@ import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
 import 'package:home_bite/Home/Bulkorder/bulkhomescreen.dart';
 import 'package:home_bite/Home/Bulkorder/bulkordermenu.dart';
+import 'package:home_bite/Home/LunchBox/lunchhomescreen.dart';
 import 'package:home_bite/Home/SpecialOrder/specialhomescreen.dart';
 import 'package:home_bite/Home/locationscreen.dart';
 import 'package:home_bite/Home/notification.dart';
@@ -158,51 +159,65 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 20),
-                          child: Container(
-                            height: 10.h,
-                            width: 19.w,
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 41, 90, 54),
-                              border: Border.all(
-                                color: const Color.fromARGB(255, 197, 197, 197),
-                              ),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(25),
-                                bottomRight: Radius.circular(25),
-                                bottomLeft: Radius.circular(10),
-                                topRight: Radius.circular(1),
-                              ),
-                            ),
-                            clipBehavior: Clip.hardEdge,
-                            child: Column(
-                              children: [
-                                Expanded(
-                                  child: Image.asset(
-                                    "assets/hometop2.png",
-                                    fit: BoxFit.contain,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => Lunchhomescreen(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              height: 10.h,
+                              width: 19.w,
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 41, 90, 54),
+                                border: Border.all(
+                                  color: const Color.fromARGB(
+                                    255,
+                                    197,
+                                    197,
+                                    197,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 2),
-                                  child: Text(
-                                    " Lunch ",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14.sp,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(25),
+                                  bottomRight: Radius.circular(25),
+                                  bottomLeft: Radius.circular(10),
+                                  topRight: Radius.circular(1),
+                                ),
+                              ),
+                              clipBehavior: Clip.hardEdge,
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: Image.asset(
+                                      "assets/hometop2.png",
+                                      fit: BoxFit.contain,
                                     ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 1),
-                                  child: Text(
-                                    " Box",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14.sp,
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 2),
+                                    child: Text(
+                                      " Lunch ",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14.sp,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 1),
+                                    child: Text(
+                                      " Box",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14.sp,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),

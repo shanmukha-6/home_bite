@@ -4,6 +4,7 @@ import 'package:home_bite/Constants/FontConstants.dart';
 import 'package:home_bite/Home/profile/favorite.dart';
 import 'package:home_bite/Home/profile/orderscreen.dart';
 import 'package:home_bite/Home/profile/setting.dart';
+import 'package:home_bite/briyaniComponents/paymentoption.dart';
 import 'package:sizer/sizer.dart';
 
 class Profilescreen extends StatefulWidget {
@@ -204,10 +205,19 @@ class _ProfilescreenState extends State<Profilescreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 260),
-                    child: Icon(
-                      Icons.arrow_forward_ios,
-                      size: 20,
-                      color: Colors.black,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => PaymentScreen(),
+                          ),
+                        );
+                      },
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        size: 20,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ],
