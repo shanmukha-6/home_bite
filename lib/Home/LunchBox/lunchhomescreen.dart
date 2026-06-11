@@ -5,6 +5,7 @@ import 'package:home_bite/Home/Bulkorder/bulkordermenu.dart';
 import 'package:home_bite/Home/Bulkorder/customizebulk.dart';
 import 'package:home_bite/Home/LunchBox/bitescreen.dart';
 import 'package:home_bite/Home/LunchBox/lunchcustomscreen.dart';
+import 'package:home_bite/Home/LunchBox/subscribecustomscreen.dart';
 import 'package:home_bite/Home/notification.dart';
 import 'package:home_bite/Home/profile/profilescreen.dart';
 import 'package:home_bite/briyaniComponents/biryanidetails.dart';
@@ -626,7 +627,7 @@ class _LunchhomescreenState extends State<Lunchhomescreen> {
                           "Serving Weekly Lunches",
                           style: TextStyle(fontSize: 13),
                         ),
-
+                        SizedBox(height: 0.5.h),
                         RichText(
                           text: const TextSpan(
                             children: [
@@ -777,10 +778,13 @@ class _LunchhomescreenState extends State<Lunchhomescreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Image.asset(
-                      "assets/salad1.png",
-                      fit: BoxFit.cover,
-                      scale: 2,
+                    child: ClipRRect(
+                      borderRadius: BorderRadiusGeometry.circular(15),
+                      child: Image.asset(
+                        "assets/salad1.png",
+                        fit: BoxFit.cover,
+                        scale: 2,
+                      ),
                     ),
                   ),
                   Padding(
@@ -865,10 +869,13 @@ class _LunchhomescreenState extends State<Lunchhomescreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Image.asset(
-                      "assets/snacks.png",
-                      fit: BoxFit.cover,
-                      scale: 2,
+                    child: ClipRRect(
+                      borderRadius: BorderRadiusGeometry.circular(15),
+                      child: Image.asset(
+                        "assets/snacks.png",
+                        fit: BoxFit.cover,
+                        scale: 2,
+                      ),
                     ),
                   ),
                   Padding(
@@ -953,10 +960,13 @@ class _LunchhomescreenState extends State<Lunchhomescreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Image.asset(
-                      "assets/french.png",
-                      fit: BoxFit.cover,
-                      scale: 2,
+                    child: ClipRRect(
+                      borderRadius: BorderRadiusGeometry.circular(15),
+                      child: Image.asset(
+                        "assets/french.png",
+                        fit: BoxFit.cover,
+                        scale: 2,
+                      ),
                     ),
                   ),
                   Padding(
@@ -1017,13 +1027,13 @@ class _LunchhomescreenState extends State<Lunchhomescreen> {
                 ],
               ),
             ),
-            SizedBox(height: 9.h),
+            SizedBox(height: 5.h),
             Container(
               height: 9.h,
               width: 90.w,
               decoration: BoxDecoration(
                 color: Color(0xFFEEFFF2),
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
                 children: [
@@ -1037,7 +1047,7 @@ class _LunchhomescreenState extends State<Lunchhomescreen> {
                     child: Image.asset("assets/spices.png"),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 13),
+                    padding: const EdgeInsets.only(left: 10),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1056,21 +1066,33 @@ class _LunchhomescreenState extends State<Lunchhomescreen> {
                       ],
                     ),
                   ),
-                  Container(
-                    height: 3.h,
-                    width: 25.w,
-                    decoration: BoxDecoration(
-                      color: Colorconstants.PrimaryColor,
-                      borderRadius: BorderRadius.circular(7),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10, top: 6),
-                      child: Text(
-                        "Customize Plan",
-                        style: FontConstants.inter(
-                          color: Colors.white,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => Subscribecustomscreen(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 3.h,
+                        width: 25.w,
+                        decoration: BoxDecoration(
+                          color: Colorconstants.PrimaryColor,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10, top: 6),
+                          child: Text(
+                            "Customize Plan",
+                            style: FontConstants.inter(
+                              color: Colors.white,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
                     ),

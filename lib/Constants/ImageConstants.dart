@@ -51,6 +51,10 @@ class Imageconstants {
   static const String GIFT = 'assets/gift.png';
   static const String PLAN = 'assets/plan.png';
   static const String RIGHT = 'assets/right.png';
+  static const String VEG = 'assets/veg.png';
+  static const String DUNNE = 'assets/dunne.png';
+  static const String EGG1 = 'assets/egg1.png';
+  static const String NONVEG = 'assets/nonveg.png';
 
   ///ICONS
   static const String HEART = 'assets/heart.png';

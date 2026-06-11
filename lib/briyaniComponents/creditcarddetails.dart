@@ -213,7 +213,7 @@ class _CardScreenState extends State<CardScreen> {
                   ),
                 ),
                 onPressed: () {},
-                child: Text("Make Payment"),
+                child: Text("Make Payment", style: TextStyle(fontSize: 16.sp)),
               ),
             ),
           ],
