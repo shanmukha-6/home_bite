@@ -112,6 +112,28 @@ class _ProfilescreenState extends State<Profilescreen> {
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 62.sp),
+                    child: Container(
+                      height: 2.5.h,
+                      width: 12.w,
+                      decoration: BoxDecoration(
+                        color: Colorconstants.PrimaryColor,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 25),
+                        child: Container(
+                          height: 1.6.h,
+                          width: 5.w,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
               SizedBox(height: 2.h),

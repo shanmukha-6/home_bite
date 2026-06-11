@@ -231,45 +231,54 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       SizedBox(height: 2.h),
                       Padding(
                         padding: const EdgeInsets.only(left: 15),
-                        child: Container(
-                          height: 8.h,
-                          width: 80.w,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFFFF0F0),
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: 1.7.h),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 15),
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                        builder: (context) => CardScreen(),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => CardScreen(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            height: 8.h,
+                            width: 80.w,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFFFF0F0),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 1.7.h),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 15),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) => CardScreen(),
+                                        ),
+                                      );
+                                    },
+                                    child: Text(
+                                      "+ Add New Card",
+                                      style: FontConstants.inter(
+                                        color: Colors.blue,
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.bold,
                                       ),
-                                    );
-                                  },
-                                  child: Text(
-                                    "+ Add New Card",
-                                    style: FontConstants.inter(
-                                      color: Colors.blue,
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 15),
-                                child: Text(
-                                  "Save And pay Via Cards ",
-                                  style: FontConstants.inter(fontSize: 16.sp),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 15),
+                                  child: Text(
+                                    "Save And pay Via Cards ",
+                                    style: FontConstants.inter(fontSize: 16.sp),
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -313,12 +322,21 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 15, left: 120),
-                        child: Text(
-                          "Edit",
-                          style: FontConstants.inter(
-                            fontSize: 16.sp,
-                            color: const Color.fromARGB(255, 18, 90, 21),
-                            fontWeight: FontWeight.bold,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => LocationScreen(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            "Edit",
+                            style: FontConstants.inter(
+                              fontSize: 16.sp,
+                              color: const Color.fromARGB(255, 18, 90, 21),
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),

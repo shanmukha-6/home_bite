@@ -7,6 +7,7 @@ import 'package:home_bite/Home/LunchBox/lunchhomescreen.dart';
 import 'package:home_bite/Home/SpecialOrder/specialhomescreen.dart';
 import 'package:home_bite/Home/locationscreen.dart';
 import 'package:home_bite/Home/notification.dart';
+import 'package:home_bite/Home/profile/profilescreen.dart';
 import 'package:home_bite/briyaniComponents/biryanidetails.dart';
 import 'package:home_bite/briyaniComponents/biryanilisting.dart';
 import 'package:home_bite/briyaniComponents/cardsummary.dart';
@@ -92,10 +93,19 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 9),
-                        child: Icon(
-                          Icons.account_circle_outlined,
-                          size: 19.sp,
-                          color: Colors.white,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => Profilescreen(),
+                              ),
+                            );
+                          },
+                          child: Icon(
+                            Icons.account_circle_outlined,
+                            size: 19.sp,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],

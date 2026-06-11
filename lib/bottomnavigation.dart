@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_bite/Constants/ColorConstants.dart';
 import 'package:home_bite/Constants/FontConstants.dart';
+import 'package:home_bite/Home/LunchBox/subscriptionscreen.dart';
 import 'package:home_bite/Home/homepage.dart';
 import 'package:home_bite/Home/profile/orderscreen.dart';
 import 'package:home_bite/Home/profile/profilescreen.dart';
@@ -17,7 +18,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   final List<Widget> _pages = [
     HomePage(),
-    const Center(child: Text("Subscription Screen")),
+    Subscriptionscreen(),
     const Center(child: Text("Search Screen")),
     OrderScreen(),
     Profilescreen(),

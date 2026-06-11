@@ -851,15 +851,11 @@ Widget foodTypeIcon(bool isVeg) {
   return Container(
     height: 15,
     width: 15,
-    decoration: BoxDecoration(
-      border: Border.all(color: isVeg ? Colors.green : Colors.red),
-    ),
+
     child: Center(
-      child: Icon(
-        isVeg ? Icons.circle : Icons.change_history,
-        size: 9,
-        color: isVeg ? Colors.green : Colors.red,
-      ),
+      child: isVeg
+          ? Image(image: AssetImage("assets/danger.png"))
+          : Image(image: AssetImage("assets/greendot.png")),
     ),
   );
 }
